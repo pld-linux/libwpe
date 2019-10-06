@@ -1,12 +1,12 @@
 Summary:	General-purpose library for the WPE-flavored port of WebKit
 Name:		libwpe
-Version:	1.4.0
+Version:	1.4.0.1
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	https://github.com/WebPlatformForEmbedded/libwpe/releases/download/%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	4b6dbaa2d40408975fe1be935367b4e8
-URL:		https://github.com/WebPlatformForEmbedded/libwpe
+# Source0-md5:	1d4d38413ee0d0043f74d0445cab906f
+URL:		https://wpewebkit.org/
 BuildRequires:	cmake
 BuildRequires:	xorg-lib-libxkbcommon-devel
 BuildRequires:	Mesa-libEGL-devel
