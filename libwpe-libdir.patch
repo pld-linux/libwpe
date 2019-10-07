@@ -1,0 +1,11 @@
+--- libwpe-1.4.0.1/wpe.pc.cmake.orig	2019-10-01 15:26:02.000000000 +0200
++++ libwpe-1.4.0.1/wpe.pc.cmake	2019-10-07 15:51:30.398204638 +0200
+@@ -1,7 +1,7 @@
+ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=${prefix}
+ includedir=${prefix}/include
+-libdir=${exec_prefix}/lib
++libdir=@CMAKE_INSTALL_FULL_LIBDIR@
+ 
+ Name: wpe-@WPE_API_VERSION@
+ Description: The wpe library
