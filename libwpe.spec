@@ -1,3 +1,4 @@
+# TODO: apidocs (BR: hotdoc, https://hotdoc.github.io/ - deps not ready yet)
 Summary:	General-purpose library for the WPE-flavored port of WebKit
 Summary(pl.UTF-8):	Ogólna biblioteka do portu WPE biblioteki WebKit
 Name:		libwpe
