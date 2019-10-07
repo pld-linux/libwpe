@@ -3,7 +3,7 @@ Summary:	General-purpose library for the WPE-flavored port of WebKit
 Summary(pl.UTF-8):	Ogólna biblioteka do portu WPE biblioteki WebKit
 Name:		libwpe
 Version:	1.4.0.1
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 #Source0Download: https://github.com/WebPlatformForEmbedded/libwpe/releases
