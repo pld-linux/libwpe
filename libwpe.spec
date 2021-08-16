@@ -18,6 +18,7 @@ BuildRequires:	EGL-devel
 BuildRequires:	cmake >= 3.0
 %{?with_apidocs:BuildRequires:	hotdoc}
 BuildRequires:	libstdc++-devel >= 6:4.7
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 1.605
 BuildRequires:	xorg-lib-libxkbcommon-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -46,6 +47,7 @@ Pliki nagłówkowe biblioteki WPE.
 Summary:	API documentation for WPE library
 Summary(pl.UTF-8):	Dokumentacja API biblioteki WPE
 Group:		Documentation
+BuildArch:	noarch
 
 %description apidocs
 API documentation for WPE library.
