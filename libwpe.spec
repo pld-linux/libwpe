@@ -1,4 +1,7 @@
-# TODO: apidocs (BR: hotdoc, https://hotdoc.github.io/ - deps not ready yet)
+#
+# Conditional build:
+%bcond_without	apidocs	# API documentation
+
 Summary:	General-purpose library for the WPE-flavored port of WebKit
 Summary(pl.UTF-8):	Ogólna biblioteka do portu WPE biblioteki WebKit
 Name:		libwpe
@@ -13,6 +16,7 @@ Patch0:		%{name}-libdir.patch
 URL:		https://wpewebkit.org/
 BuildRequires:	EGL-devel
 BuildRequires:	cmake >= 3.0
+%{?with_apidocs:BuildRequires:	hotdoc}
 BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	rpmbuild(macros) >= 1.605
 BuildRequires:	xorg-lib-libxkbcommon-devel
@@ -38,6 +42,17 @@ Header files for WPE library.
 %description devel -l pl.UTF-8
 Pliki nagłówkowe biblioteki WPE.
 
+%package apidocs
+Summary:	API documentation for WPE library
+Summary(pl.UTF-8):	Dokumentacja API biblioteki WPE
+Group:		Documentation
+
+%description apidocs
+API documentation for WPE library.
+
+%description apidocs -l pl.UTF-8
+Dokumentacja API biblioteki WPE.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -45,7 +60,8 @@ Pliki nagłówkowe biblioteki WPE.
 %build
 install -d build
 cd build
-%cmake ..
+%cmake .. \
+	%{?with_apidocs:-DBUILD_DOCS=ON}
 
 %{__make}
 
@@ -72,3 +88,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libwpe-1.0.so
 %{_includedir}/wpe-1.0
 %{_pkgconfigdir}/wpe-1.0.pc
+
+%if %{with apidocs}
+%files apidocs
+%defattr(644,root,root,755)
+%doc build/Documentation/html/*
+%endif
